@@ -50,7 +50,7 @@ body {
 	line-height: 0;
 	font-weight: bold;
 }
-.main-copyright{
+.copyright{
   font-size: 20px;
   grid-row: 3/4;
   background-color:black;
