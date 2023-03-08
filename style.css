@@ -1,0 +1,136 @@
+body {
+  width: 100vw;
+  max-width: 100%;
+  margin: 0;
+  min-height: 100vh;
+  font-family: sans-serif;
+  display: grid;
+  grid-template-rows: 10vh auto 10vh;
+}
+
+.top-menu{
+  grid-row: 1/2;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  border: none;
+  font-size: 15px;
+  background-color:black;
+  color:white;
+}
+.top-menu a{
+  align-self: center;
+  text-decoration: none;
+  cursor: default;
+}
+
+.top-menu button, .top-menu a{
+  border-style: none;
+  background-color: black;
+  font-size: 20px;
+  cursor: pointer;
+  color:white;
+}
+.top-menu button:hover{
+  color: #d4d4f7;
+}
+
+.top-menu a:link{
+  color: white;
+}
+
+.top-menu a:hover{
+  color: white;
+}
+
+.top-menu a:visited{
+  color: white;
+}
+#logout,#loonepieceMain{
+	line-height: 0;
+	font-weight: bold;
+}
+.copyright{
+  font-size: 20px;
+  grid-row: 3/4;
+  background-color:black;
+  color: white;
+  text-align: center;
+  line-height: 10vh;
+}
+.welcome{
+  padding-left: 20px;
+}
+.welcome h1{
+  text-align : center;
+}
+.top3_table table{
+  border: 4px dashed black;
+  border-radius: 20px;
+  border-color: orange;
+}
+.latest table{
+  border: 4px dashed black;
+  border-radius: 20px;
+  border-color: orange;
+}
+.search_bar{
+  margin-top: 30px;
+  margin-bottom: 50px;
+  text-align: center;
+}
+.search_bar input{
+  width:350px;
+  height:30px;
+}
+.search_bar button{
+  width:60px;
+  height:35px;
+}
+
+.search p{
+  color:#222222;
+  margin-top:8px;
+  margin-bottom: 2px;
+}
+
+.search ul{
+  float:left;
+  margin: 20px 25px 25px 20px;
+}
+
+.search li{
+  list-style: none;
+}
+
+.search img{
+  width:250px;
+}
+
+.recipe_list{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-left: 5vh;
+  margin-right: 5vh;
+  margin-bottom: 5vh;
+}
+
+.recipe_list button{
+  border-style: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.recipe_list button:hover{
+  color:#D35400;
+  text-decoration: underline;
+}
+
+.quick{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: flex-start;
+  margin-left: 95px;
+}
