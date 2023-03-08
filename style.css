@@ -36,13 +36,12 @@ body {
 .top-menu button:hover{
   color: #d4d4f7;
 }
-
 .top-menu a:link{
   color: white;
 }
 
 .top-menu a:hover{
-  color: white;
+  color: #d4d4f7;
 }
 
 .top-menu a:visited{
