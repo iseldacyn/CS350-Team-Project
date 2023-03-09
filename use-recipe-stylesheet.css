@@ -1,28 +1,37 @@
 .ignore-css{
   all: unset;
-  font-style: sans-serif;
+  font-family: sans-serif;
 }
 
 .recipe-heading{
   background-color: #CCC5B9;
-  margin-left: 25%;
-  margin-right: 25%;
-  margin-top: 50px;
+  margin-left: 10%;
+  margin-right: 10%;
   padding-bottom: 10px;
+  border-bottom-right-radius: 20px;
+  border-bottom-left-radius: 20px;
 }.recipe-heading img{
   height: 250px;
   width: 100%;
   object-fit: cover;
 }.recipe-heading h1{
-  font-size: 50px;
+  font-size: 80px;
   text-align: center;
+  margin-top:20px;
+  margin-bottom:30px;
 }.recipe-heading h3{
-  font-size: larger;
-  margin-left: 20%;
+  font-size: 35px;
+  margin-left: 15%;
+  margin-top:20px;
+  margin-bottom:10px;
+}.recipe-heading p{
+  margin-top:25px;
+  margin-left: 17%;
+  font-size:20px;
 }
 
 .time-serve li{
-  font-size: larger;
+  font-size: 35px;
   display: inline-block;
   margin-top: 15px;
   margin-bottom: 10px;
@@ -41,6 +50,67 @@
   content: url("images/tag.png");
 }
 
-.recipe-body h2{
-  font-size: 
+.recipe-body{
+  font-size:30px;
+}.recipe-body h2{
+  font-size: 50px;
+  margin-left:15%;
+  margin-bottom:0;
+}.recipe-body ul{
+  margin-left:20%;
+  margin-right:15%;
+  margin-top:5px;
+}.recipe-body ol{
+  margin-left:20%;
+  margin-right:15%;
+  margin-top:5px;
+}
+
+.ing-list li{
+  color:gray;
+  padding:10px;
+}.ing-list li::marker{
+  color:darkorange;
+}
+
+.steps{
+  counter-reset: item;
+  list-style-type: none;
+}.steps li{
+  color:gray;
+  padding:10px;
+  counter-increment: item;
+}.steps li::before{
+  content: counter(item);
+  background:orange;
+  color: white;
+  display: inline-grid;
+  place-items: center;
+  margin-right:0.5rem;
+  width: 1.2em;
+  height: 1.2em;
+  border-radius:50%;
+
+}
+
+.timer-val, .timer{
+  background-color: transparent;
+  border:0;
+  color:orange;
+  font-size:32px;
+}.timer:hover{
+  text-decoration: underline;
+  color:darkorange;
+  cursor: pointer;
+}
+
+.review{
+  margin-left:42.5%;
+  margin-bottom:20px;
+  background:none;
+  border:none;
+  text-decoration: underline;
+  color:darkorange;
+  font-size:40px;
+  cursor: pointer;
 }
