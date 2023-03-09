@@ -1,0 +1,161 @@
+body {
+  width: 100vw;
+  max-width: 100%;
+  margin: 0;
+  min-height: 100vh;
+  font-family: Arial, Helvetica, sans-serif;
+  display: grid;
+  grid-template-rows: 10vh auto 10vh;
+}
+.top-menu{
+  grid-row: 1/2;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  border: none;
+  font-size: 15px;
+  background-color:black;
+  color:white;
+}
+.top-menu a{
+  align-self: center;
+  text-decoration: none;
+  cursor: default;
+}
+.top-menu button, .top-menu a{
+  border-style: none;
+  background-color: black;
+  font-size: 20px;
+  cursor: pointer;
+  color:white;
+}
+.top-menu button:hover{
+  color: #d4d4f7;
+}
+.top-menu a:link{
+  color: white;
+}
+
+.top-menu a:hover{
+  color: #d4d4f7;
+}
+.top-menu a:visited{
+  color: white;
+}
+#logout,#loonepieceMain{
+  line-height: 0;
+  font-weight: bold;
+}
+.copyright{
+  font-size: 20px;
+  grid-row: 3/4;
+  background-color:black;
+  color: white;
+  text-align: center;
+  line-height: 6vh;
+}
+.content-section {
+  margin: 1em;
+}
+.recipe-form {
+  border: 4px dashed black;
+  border-radius: 20px;
+  border-color: orange;
+  padding: 20px;
+}
+
+.form-field {
+  padding: 5px;
+  /* background-color: gray; */
+  align-items: left;
+}
+
+.label {
+  font-size: 1.5em;
+}
+
+.field {
+  font-size: 1.2em;
+  padding: 10px;
+  font-family: sans-serif;
+}
+
+.ingredients {
+  max-width: 60%;
+}
+
+.ingredient-header {
+  /* font-weight: bold; */
+  font-size: 1.4em;
+  color: #333;
+  padding: 10px 0 10px 0;
+  text-align: left;
+  
+}
+
+.ingredient-column {
+  display: flex;
+  align-items: center;
+  margin-right: 1.5em;
+  /* padding-bottom: 10px; */
+  margin-top: 10px;
+}
+
+.ingredient-row {
+  display: flex;
+  align-items: center;
+}
+
+.ingredient-quantity {
+  width: 15%;
+}
+
+.ingredient-unit {
+  width: 30%;
+}
+
+.ingredient-name {
+  width: 55%;
+}
+
+.ing-btn {
+  width: 40px;
+  height: 40px;
+  margin-right: 5px;
+  /* padding: 10px; */
+}
+
+.title {
+  text-align: center;
+}
+
+.btn {
+  text-align: center;
+  vertical-align: middle;
+  padding: .67em;
+  cursor: pointer;
+}
+
+.add-btn {
+  color: white;
+  background-color: green;
+  border: none;
+  border-radius: .3em;
+  font-weight: bold;
+}
+
+.add-btn:hover {
+  background-color: greenyellow;
+}
+
+.rmv-btn {
+  color: white;
+  background-color: #eb5757;
+  border: none;
+  border-radius: .3em;
+  font-weight: bold;
+}
+
+.rmv-btn:hover {
+  background-color: #cc4c4c;
+}
