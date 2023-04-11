@@ -3,10 +3,11 @@
 <html>
 
   <head lang="en" dir="ltr">
+    <meta charset="utf-8">
     <title>Use Recipe Example</title>
-    <link rel="stylesheet" href="use-recipe-stylesheet.css">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="reviewstyle.css">
+    <link rel="stylesheet" href="../css/use.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/reviewstyle.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
   </head>
 
@@ -14,15 +15,15 @@
 
     <header class="top-menu">
       <p style = "font-size:25px" "text-align:center;"><b>Recipe Buddy</b></p>
-      <a id="home" type="button" name="button" href="mainPage.html">HOME</a>
-      <a id="search" type="button" name="button" href="searchPage.html">SEARCH</a>
+      <a id="home" type="button" name="button" href="index.html">HOME</a>
+      <a id="search" type="button" name="button" href="search.html">SEARCH</a>
       <a id="add" type="button" name="button" href="create.html">ADD RECIPE</a>
       <a id="contactus"type="button" name="button">CONTACT US</a>
       <a id="login" name="button" href="login.html"><b>Login</b></a>
     </header>
 
     <div class="recipe-heading">
-      <img src="images/recipe-photo.jpg">
+      <img src="../images/recipe-photo.jpg">
       <h1>Homemade Bacon and Eggs</h1>
       <h3>Description/Notes</h3>
       <p>A simple, fast recipe for scrambled eggs with bacon.</p>
@@ -70,7 +71,7 @@
         <li>Melt butter over a skillet on medium high heat.</li>
         <li>
           Once melted, add your egg mixture. Then, use a spatula to scramble the eggs for 4 minutes, or until desired.
-          <br><span class="timer-val">4:00</span><button onclick="startTimer()" class="timer"><img src="images/hourglass.png"></button>
+          <br><span class="timer-val">4:00</span><button onclick="startTimer()" class="timer"><img src="../images/hourglass.png"></button>
           <button onclick="resetTimer()" style="color:blue;background:transparent;border-width:0;font-size:30px;cursor:pointer;">Reset</button> 
         </li>
         <li>Take off of heat, pour mixture into a bowl, and serve immediately with your desired condiments.</li>
