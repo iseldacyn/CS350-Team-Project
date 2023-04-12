@@ -41,41 +41,41 @@
       </ul>
     </div>
 
-    <div class="recipe-body">
-      <h2>Ingredients</h2>
-      <ul class="ing-list">
-        <li>Eggs (4)</li>
-        <li>Bacon (2 Pieces)</li>
-        <li>Milk (1 Cup)</li>
-        <li>Salt</li>
-        <li>Pepper</li>
-        <li>Butter</li>
-      </ul>
+    <div class="body-container">
+      <div class="recipe-body">
+        <h2>Ingredients</h2>
+        <ul class="ing-list">
+          <li>Eggs (4)</li>
+          <li>Bacon (2 Pieces)</li>
+          <li>Milk (1 Cup)</li>
+          <li>Salt</li>
+          <li>Pepper</li>
+          <li>Butter</li>
+        </ul>
 
-      <hr style="border-width:0;border-top:dashed 5px;border-color:orange;margin-left:10%;margin-right:10%;">
+        <hr style="border-width:0;border-top:dashed 5px;border-color:orange;margin-left:10%;margin-right:10%;">
 
-      <h2>Pantry</h2>
-      <ul class="ing-list">
-        <li>Skillet</li>
-        <li>Measuring Cup</li>
-        <li>Mixing Bowl</li>
-      </ul>
+        <h2>Pantry</h2>
+        <ul class="ing-list">
+          <li>Skillet</li>
+          <li>Measuring Cup</li>
+          <li>Mixing Bowl</li>
+        </ul>
 
-      <hr style="border-width:0;border-top:dashed 5px;border-color:orange;margin-left:10%;margin-right:10%;">
+        <hr style="border-width:0;border-top:dashed 5px;border-color:orange;margin-left:10%;margin-right:10%;">
 
-      <h2>Directions</h2>
-      <ol class="steps">
-        <li>Gather your ingredients.</li>
-        <li>Cook 2 pieces of bacon according to package directions. Once cooked, cut into ~1/2 inch slices.</li>
-        <li>Crack eggs in a mixing bowl. Add milk, a dash of salt and pepper, and bacon to the bowl. Whisk until the eggs are beaten.</li>
-        <li>Melt butter over a skillet on medium high heat.</li>
-        <li>
-          Once melted, add your egg mixture. Then, use a spatula to scramble the eggs for 4 minutes, or until desired.
-          <br><span class="timer-val">4:00</span><button onclick="startTimer()" class="timer"><img src="../images/hourglass.png"></button>
-          <button onclick="resetTimer()" style="color:blue;background:transparent;border-width:0;font-size:30px;cursor:pointer;">Reset</button> 
-        </li>
-        <li>Take off of heat, pour mixture into a bowl, and serve immediately with your desired condiments.</li>
-      </ol>
+        <h2>Directions</h2>
+        <p>[Insert Direction String Here]</p>
+      </div>
+
+      <div class="timer-col">
+        <ol class="timer-list">  
+          <li>
+            <span class="timer-val">4:00</span><button onclick="startTimer()" class="timer"><img src="../images/hourglass.png"></button>
+            <button onclick="resetTimer()" class="reset">Reset</button>
+          </li>
+        </ol>
+      </div>
     </div>
 
     <div class="popup" id="reviewPopup">
