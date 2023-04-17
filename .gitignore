@@ -1,0 +1,5 @@
+node_modules/*
+package-lock.json
+package.json
+Key.json
+scripts/Key.json
