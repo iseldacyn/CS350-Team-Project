@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "recipe-buddy-d17da",
+  "private_key_id": "a4e0a28ad37df6b56cff9041b33aa312aff95511",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQC7lLGhlCv68OuU\nChHaQys3rXOQnNkVNJHrNMwHGFpYW8EeqwDz7bjlQkScxnO4F/gh+PUjZrXl/iO6\nQN6CnjjuCbNW7vUPZt+v6eLjyi6fCb/YxRGnQfw1XZVMvWZYhf3DQBDzhxjWU718\nz/KEwAAJwbbFkkrE63PilvDWxtXTeDfE1CUSpRxJL1P5s97mBHmXmzSQEWuyArOH\nQxEcEQ0tZKE3Ndrzpv82EALDIrZxcEMRK3qeOTSj+rSi0PnMHIMhTCllvRnjxrWf\nw1c16To0sZLp4mNb6+c5xeZHp2yJ94z0FwBiev0PUgTgixCCW82tPv3ILuNTw+L2\nA52Ty4TTAgMBAAECggEAEltXVM4ozap1C2w+2gK3wH+fbxgCYIJgA0oL62fVM49r\nI0Kt2bE6ZmkpSMRc/7eMx1pTNw8unt7ThT8i51pvjM/zNn81CThSjKcRVqRrEpJE\nLYT/mMQq19gcK8HfOauHLWvgHMzsP9E7GnNJMveNKWdFKSmLWqEGGrcVw5b6xvJy\nQLzcK4EdK/C4rlcKKwyWnnyYiIWQD0QFNrOXhN+I7fGqb8bS3aWjxwJncwGZ/Dyt\nxA94zlTwZDePUdmlqQBEUjONCGdhav0JCF/3MFO1KDuRmKSUFuVt3bZbgTZIlirD\neLpiWWopQfBKLwnp+23I01bM79mrcb8MNypRE3DYGQKBgQDxFVLVFwrQHyVmaZxL\nSg88wtYvvnIHW0bUP995snTsXX1BV96Rhz30QgUvpgu0S8fvJ+zk5nmOdGFPjsiF\nyO6sgqWrQBG+wq/WV5eO5WPBisr6JIKr759BdZTxXjeCAEsnXm1gdnKnLHm5ELMi\nsmG30Ep0BAPZklA5PDkk7+iHWwKBgQDHL+jlytB0y9yZRzeMgCqUEGpKFoiOjn45\nGbutRJDcHizF3A621XfvNLLaFR/o8lvy4t5QMTj7+o2UCvQYf+EB7fz2BB+jSETB\nK0WlN4SsdPGFQ4A3+Q/OLOvfrIOfZfRrWlBFJDvMz671XHFnhZ+BnGLqDqB1aXUu\natYOoixp6QKBgCYOEKI0Xe+WSwgMebBkw1z7AGZO8J76qIaOgo8qPUymQURUQ3zD\nVWM+HKV113khUTEOI1XKj7uN4WJ2jm6X1h0DDnWmymZLQwhZkUHsMb/2Ua4En1/W\nllP15InpLmfl9fcD783/RH/hBGHTIgPDFqu2RFpl29m3P9SZDggnmpPrAoGBAJMc\nlGNbZphMlLH0QleXtVrDwOzVNagsH5dmpRE0adTYyHKds5RflwPppQqivX2bukNq\nQY1yvUaFZ5lmeZ+6muGE9uZwZzl+P6F3pyl+FpQUjujA0OsGHSFGVjNNw6yvbVT4\nT/6w4yXCYdK/otY1f3gHm5qIkQQGjlBpAY2vQyQ5AoGADiboEx1U1QwwYE1XDn4o\n+dTMMuP5iaJtYodiOgvh3tasKVCp+32YdKAKsOnO97ClhkA7je6Sb1UU+F256uWP\nZLGChBLthfRGnHAcXuVaEwA9TWoxs/pZGk3WT0xNmRICYtxDK6V623I/fmW5DAVu\nq161dSnHXiZrEfLxfmFV9yo=\n-----END PRIVATE KEY-----\n",
+  "client_email": "firebase-adminsdk-hpedp@recipe-buddy-d17da.iam.gserviceaccount.com",
+  "client_id": "104943901924525021053",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-hpedp%40recipe-buddy-d17da.iam.gserviceaccount.com"
+}
