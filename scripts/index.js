@@ -1,25 +1,21 @@
-const create = require('create.js');
-const loginscript = require('loginscript.js');
 
-// Import the functions you need from the SDKs you need
-import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
+var admin = require("firebase-admin");
 
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
-const firebaseConfig = {
-  apiKey: "AIzaSyAxBaS7uNtYEl1klUezNXVw22-Odt8w2ZY",
-  authDomain: "recipe-buddy-d17da.firebaseapp.com",
-  databaseURL: "https://recipe-buddy-d17da-default-rtdb.firebaseio.com",
-  projectId: "recipe-buddy-d17da",
-  storageBucket: "recipe-buddy-d17da.appspot.com",
-  messagingSenderId: "896861726820",
-  appId: "1:896861726820:web:1271e83a342b23018a1771",
-  measurementId: "G-SWR1Y3XV4B"
-};
+var serviceAccount = require("./Key.json");
 
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
+admin.initializeApp({
+  credential: admin.credential.cert(serviceAccount),
+  databaseURL: "https://recipe-buddy-d17da-default-rtdb.firebaseio.com"
+});
+
+const db = admin.firestore();
+
+let recipesRef = db.collection("Recipes");
+
+recipesRef.get().then((querySnapshot) => {
+  querySnapshot.forEach(document => {
+    console.log(document.data());
+  })
+})
+
+
