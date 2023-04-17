@@ -50,4 +50,5 @@ function addIngredientRow(event) {
 function removeIngredient(event) {
     var buttonClicked = event.target
     buttonClicked.parentElement.remove()
+
 }
