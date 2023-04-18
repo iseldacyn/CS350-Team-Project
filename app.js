@@ -19,6 +19,10 @@ app.get("/login", function (req, res) {
     res.sendFile(__dirname + "/pages/login.html");
 })
 
+app.get("/contact", function (req, res) {
+    res.sendFile(__dirname + "/pages/contactus.html");
+})
+
 app.listen(3000, function () {
     console.log("Server is running on localhost3000");
 });
