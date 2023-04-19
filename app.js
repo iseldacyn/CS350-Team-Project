@@ -90,3 +90,10 @@ app.get("/contact", function (req, res) {
 app.listen(3000, function () {
     console.log("Server..... Is...\n ....Buzzinnn....");
 });
+
+
+// delete recipes to firestore db
+function deleteRecipe(data) {
+    const db = getFirestore();
+    db.collection('Recipes').doc(data).delete();
+}
