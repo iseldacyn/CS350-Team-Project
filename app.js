@@ -88,6 +88,10 @@ app.get("/contact", function (req, res) {
     res.sendFile(__dirname + "/pages/contactus.html");
 })
 
+app.get("/edit", function (req, res) {
+    res.sendFile(__dirname + "/pages/edit.html");
+})
+
 // Start the server
 app.listen(3000, function () {
     console.log("Server..... Is...\n ....Buzzinnn....");
