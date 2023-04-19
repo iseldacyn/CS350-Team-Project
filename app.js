@@ -13,17 +13,17 @@ initializeApp({
 // Pushes recipes to firestore db
 function pushRecipe(data, img = null) {
 
+    /*
     if (img) {
         const bucket = getStorage.bucket();
         console.log("******Bucket*****", bucket);
     }
+    */
 
     //console.log(data);
-    /*
     const db = getFirestore();
     const res = db.collection('Recipes').doc(data.Title).set(data);
     console.log(res);
-    */
 }
 
 // Create Express server to host application, and handle back
@@ -51,6 +51,7 @@ app.post("/", (req, res) => {
         Instructions: recipe.directions,
         Notes: recipe.notes
     };
+    /*
     // PROBLEM: for loop keeps iterating too many times
     for (let i in  Array.from(recipe.iname)) {
         names = recipe.iname;
@@ -61,6 +62,7 @@ app.post("/", (req, res) => {
         let str = units[i].concat(".", quantities[i].toString(), ".", names[i]);
         data.IngredientList.push(str)
     }
+    */
 
     pushRecipe(data);
     res.sendFile(__dirname + "/pages/index.html");
