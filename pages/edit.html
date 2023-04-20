@@ -18,9 +18,29 @@
         <form class="recipe-form content-section" action="/" method="post">
             <h1 class="title">Edit a Recipe</h1>
             <div class="form-field">
+                <script>
+                    // Reference to a Firestore document
+                    var docRef = firebase.firestore().doc("Recipes/Banana");
+                  
+                    // Retrieve data from Firestore
+                    docRef.get().then(function(doc) {
+                      if (doc.exists) {
+                        // Access the data from the document
+                        var data = doc.data();
+                  
+                        // Set the default value of the input field
+                        document.getElementById("name").value = data.Title;
+                      } else {
+                        console.log("No such document!");
+                      }
+                    }).catch(function(error) {
+                      console.log("Error getting document: ", error);
+                    });
+                  </script>
+                  
                 <label class="label" for="name">Name of Recipe:</label>
                 <br>
-                <input class="field" type="text" id="name" name="name">
+                <input class="field" type="text" id="name" name="name" value="">
             </div>
             <div class="form-field ingredients">
                 <label class="label" for="ingredients">List of Ingredients:</label>
@@ -88,7 +108,7 @@
                 <input class="field" type="file" name="photo" id="photo" accept="image/png, image/jpeg">
             </div>
             <div class="form-field">
-                <label class="label" for="note">Add Any Notes:</label>
+                <label class="label" for="note">Edit Notes:</label>
                 <br>
                 <textarea class="field" name="notes" id="note" cols="50" rows="3"></textarea>
             </div>
