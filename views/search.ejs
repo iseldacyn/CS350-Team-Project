@@ -37,14 +37,16 @@
       </div>
       <div class="quick">
           <% for(var i = 0; i < recipes.length; i++) {%>
-            <a href="use">
+            <a href="use" id="link">
               <ul class="item" id="<%= (i+1) %>">
                 <center>
                 <li >
                   <img src="/images/template.png">
                 </li>
                 <li >
-                  <p style="font-weight:bold;"><%= recipes[i].name %></p>
+                  <p style="font-weight:bold;" id="name"><%= recipes[i].name %></p>
+                  <i class="fa fa-cog" aria-hidden="true" id="name"></i>
+                  <i class="fa fa-trash" id="name"></i>
                   <p style="color:#D35400;font-weight:bold;">Time: 5m</p>
                 </li>
                 </center>

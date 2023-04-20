@@ -143,3 +143,14 @@ body {
   justify-content: flex-start;
   margin-left: 95px;
 }
+
+#link{
+  cursor:pointer;
+}
+
+#name {
+  display: inline-block;
+  overflow: hidden;
+  color:#222222;
+  vertical-align: middle;
+}
