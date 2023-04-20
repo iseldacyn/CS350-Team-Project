@@ -23,6 +23,7 @@ function pushRecipe(data, img = null) {
     //console.log(data);
     const db = getFirestore();
     const res = db.collection('Recipes').doc(data.Title).set(data);
+    console.log("Done");
     console.log(res);
 }
 
@@ -40,8 +41,7 @@ app.use(express.urlencoded({ extended: false }));
 
 // Handle post request for root route
 app.post("/", (req, res) => {
-    var recipe = req.body;
-    // console.log(recipe, req.files);
+    const recipe = req.body;
     const data = {
         Title: recipe.name,
         RecipeTags: [],
@@ -51,24 +51,25 @@ app.post("/", (req, res) => {
         Instructions: recipe.directions,
         Notes: recipe.notes
     };
-    /*
-    // PROBLEM: for loop keeps iterating too many times
-    for (let i in  Array.from(recipe.iname)) {
-        names = recipe.iname;
-        quantities = recipe.quantity;
-        units = recipe.unit;
-        console.log("*", i, recipe, quantities[i]);
+
+    // Obtaining lists from recipe
+    names = Array.from(recipe.iname);
+    quantities = Array.from(recipe.quantity);
+    units = Array.from(recipe.unit);
+
+    for (let i = 0; i < names.length; i++) {
 
         let str = units[i].concat(".", quantities[i].toString(), ".", names[i]);
         data.IngredientList.push(str)
     }
-    */
 
     pushRecipe(data);
+    res.
     res.sendFile(__dirname + "/pages/index.html");
 })
 
 app.get("/", function (req, res) {
+    res.cookie('foo', 'bar');
     res.sendFile(__dirname + "/pages/index.html");
 });
 
