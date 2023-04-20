@@ -13,6 +13,8 @@ initializeApp({
 // Pushes recipes to firestore db
 function pushRecipe(data, img = null) {
 
+    // Putting off photo implementation until search and home page are
+    // functional
     /*
     if (img) {
         const bucket = getStorage.bucket();
@@ -20,11 +22,38 @@ function pushRecipe(data, img = null) {
     }
     */
 
-    //console.log(data);
     const db = getFirestore();
     const res = db.collection('Recipes').doc(data.Title).set(data);
     console.log("Done");
     console.log(res);
+}
+
+
+// Returns an array containing every recipe within the database
+async function getRecipes() {
+
+    const db = getFirestore();
+    const recipeRef = db.collection('Recipes');
+    const snapshot = await recipeRef.get();
+
+    recipes = [];
+
+    // Creating a recipe object and storing object in array
+    // for every recipe in the database.
+    snapshot.forEach(doc => {
+        
+        recipe = {
+            name: doc.data().Title,
+            desc: doc.data().Description,
+            rating: doc.data().AvgRating,
+            ilist: doc.data().IngredientList,
+            instruct: doc.data().Instructions,
+            notes: doc.data().Notes
+        };
+        recipes.push(recipe);
+    });
+
+   return recipes 
 }
 
 // Create Express server to host application, and handle back
@@ -34,6 +63,8 @@ const multipart = require("connect-multiparty")
 const app = express();
 
 var mp = multipart();
+
+app.set('view engine', 'ejs');
 
 // Give client access to public folder (i.e. css/js/images)
 app.use(express.static("public"));
@@ -57,40 +88,45 @@ app.post("/", (req, res) => {
     quantities = Array.from(recipe.quantity);
     units = Array.from(recipe.unit);
 
+    // Creates an easily parsible string to store in the database
     for (let i = 0; i < names.length; i++) {
-
         let str = units[i].concat(".", quantities[i].toString(), ".", names[i]);
         data.IngredientList.push(str)
     }
 
+    // Stores recipe in db
     pushRecipe(data);
-    res.
+
     res.sendFile(__dirname + "/pages/index.html");
-})
+});
 
 app.get("/", function (req, res) {
-    res.cookie('foo', 'bar');
     res.sendFile(__dirname + "/pages/index.html");
 });
 
 app.get("/create", function (req, res) {
     res.sendFile(__dirname + "/pages/create.html");
-})
+});
 
-app.get("/search", function (req, res) {
-    res.sendFile(__dirname + "/pages/search.html");
-})
+app.get("/search", async function (req, res) {
+
+    var recipes = await getRecipes();
+    res.render("search", {recipes: recipes});
+});
 
 app.get("/login", function (req, res) {
     res.sendFile(__dirname + "/pages/login.html");
-})
+});
 
 app.get("/contact", function (req, res) {
     res.sendFile(__dirname + "/pages/contactus.html");
-})
+});
 
 app.get("/edit", function (req, res) {
     res.sendFile(__dirname + "/pages/edit.html");
+});
+app.get("/use", function (req, res) {
+    res.render("use");
 })
 
 // Start the server
