@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+
+<html>
+
+  <head lang="en" dir="ltr">
+    <meta charset="utf-8">
+    <title>Recipe Buddy</title>
+    <link rel="icon" type="image/x-icon" href="/images/chef.ico">
+    <link rel="stylesheet" href="/css/use.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/reviewstyle.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+  </head>
+
+  <body class="ignore-css">
+
+    <header class="top-menu">
+      <p style = "font-size:25px" "text-align:center;"><b>Recipe Buddy</b></p>
+      <a id="home" type="button" name="button" href="/">HOME</a>
+      <a id="search" type="button" name="button" href="search">SEARCH</a>
+      <a id="add" type="button" name="button" href="create">ADD RECIPE</a>
+      <a id="contactus"type="button" name="button">CONTACT US</a>
+      <a id="login" name="button" href="login"><b>Login</b></a>
+    </header>
+
+    <div class="recipe-heading">
+      <img src="../images/recipe-photo.jpg">
+      <h1>Homemade Bacon and Eggs</h1>
+      <h3>Description/Notes</h3>
+      <p>A simple, fast recipe for scrambled eggs with bacon.</p>
+      <ul class="time-serve">
+        <li><strong>Time:</strong> 6 mins</li>
+        <li><strong>Servings:</strong> 2 people</li>
+      </ul>
+      <ul class="tags">
+        <li>Breakfast</li>
+        <li>Meat</li>
+        <li>Bacon</li>
+        <li>Eggs</li>
+        <li>Gluten-Free</li>
+        <li>Dairy-Free</li>
+      </ul>
+    </div>
+
+    <div class="body-container">
+      <div class="recipe-body">
+        <h2>Ingredients</h2>
+        <ul class="ing-list">
+          <li>Eggs (4)</li>
+          <li>Bacon (2 Pieces)</li>
+          <li>Milk (1 Cup)</li>
+          <li>Salt</li>
+          <li>Pepper</li>
+          <li>Butter</li>
+        </ul>
+
+        <hr style="border-width:0;border-top:dashed 5px;border-color:orange;margin-left:10%;margin-right:10%;">
+
+        <h2>Pantry</h2>
+        <ul class="ing-list">
+          <li>Skillet</li>
+          <li>Measuring Cup</li>
+          <li>Mixing Bowl</li>
+        </ul>
+
+        <hr style="border-width:0;border-top:dashed 5px;border-color:orange;margin-left:10%;margin-right:10%;">
+
+        <h2>Directions</h2>
+        <p>[Insert Direction String Here]</p>
+      </div>
+
+      <div class="timer-col">
+        <ol class="timer-list">  
+          <li>
+            <span class="timer-val">4:00</span><button onclick="startTimer()" class="timer"><img src="../images/hourglass.png"></button>
+            <button onclick="resetTimer()" class="reset">Reset</button>
+          </li>
+        </ol>
+      </div>
+    </div>
+
+    <div class="popup" id="reviewPopup">
+      <div class="popup-inner">
+        <span class="close-btn" onclick="closePopup()">&times;</span>
+        <h1>Recipe Name</h1>
+        
+        <form class="review-form">
+          <label for="rating">Rating:</label>
+          <div class="container">
+            <div class="star-widget">
+              <input type="radio" name="rate" id="rate-5">
+              <label for="rate-5" class="fas fa-star"></label>
+              <input type="radio" name="rate" id="rate-4">
+              <label for="rate-4" class="fas fa-star"></label>
+              <input type="radio" name="rate" id="rate-3">
+              <label for="rate-3" class="fas fa-star"></label>
+              <input type="radio" name="rate" id="rate-2">
+              <label for="rate-2" class="fas fa-star"></label>
+              <input type="radio" name="rate" id="rate-1">
+              <label for="rate-1" class="fas fa-star"></label>
+            </div>
+          </div>
+          <label for="comment">Comment:</label>
+          <textarea id="comment" name="comment" ></textarea>
+          <input type="submit" value="Submit">
+        </form>
+      </div>
+    </div>
+    <button class="review" onclick="openPopup()">Leave Review</button><br>
+    <a href="#top" style="color:black;text-decoration:none;font-weight:bold;text-align:center;font-size:24px;margin-left:45%">Return to Top</a>
+  
+    <script>
+      var interval;
+      var timer = document.querySelector(".timer-val");
+
+      function openPopup() {
+        document.getElementById("reviewPopup").style.display = "block";
+      }
+  
+      function closePopup() {
+        document.getElementById("reviewPopup").style.display = "none";
+      }
+
+      function countdown() {
+        clearInterval(interval);
+        interval = setInterval( function() {
+          time = timer.innerHTML.split(':');
+          var minutes = time[0];
+          var seconds = time[1];
+          seconds -= 1;
+          if (minutes < 0) return;
+          else if (seconds < 0 && minutes != 0) {
+            minutes -= 1;
+            seconds = 59;
+          }
+          else if (seconds < 10 && length.seconds != 2) seconds = '0' + seconds;
+          timer.innerHTML = minutes + ':' + seconds;
+          if (minutes == 0 && seconds == 0) clearInterval(interval);
+        }, 1000);
+      }
+      
+      function startTimer() {
+        timer.innerHTML = "4:00";
+        countdown();
+      }
+      
+      function resetTimer() {
+        timer.innerHTML = "4:00";
+        clearInterval(interval);
+      }
+    </script>
+
+    <footer class="copyright">
+      <p>RECIPE BUDDY WEB MAGAZINE / LIFE STYLE SELECT MEAL WWW.RECIPE_BUDDY.COM</p>
+    </footer>
+
+  </body>
+</html>
