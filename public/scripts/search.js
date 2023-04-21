@@ -15,4 +15,12 @@ function ready() {
     }
     */
 }
+function deleteRecipe(event) {
+    const db = getFirestore();
+    db.collection('Recipes').doc(event).delete();
+    var buttonClicked = event.target
+    buttonClicked.parentElement.remove()
+}
+
+delBtn.addEventListener('click',deleteRecipe);
 
