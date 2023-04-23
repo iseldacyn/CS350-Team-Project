@@ -35,24 +35,89 @@
         <button id="dessert" type="button" name="button">Dessert</button>
         <button id="vegan" type="button" name="button">Vegan</button>
       </div>
+
       <div class="quick">
-          <% for(var i = 0; i < recipes.length; i++) {%>
-            <a href="use/<%= recipes[i].name %>" id="link">
-              <ul class="item" id="<%= (i+1) %>">
+          
+            <a href="use" id="link">
+              <ul class="item" id="1">
                 <center>
                 <li >
                   <img src="/images/template.png">
                 </li>
                 <li >
-                  <p style="font-weight:bold;" id="name"><%= recipes[i].name %></p>
+                  <p style="font-weight:bold;" id="name">Pancakes</p>
                   <button name="button" type="button" href="edit"><i class="fa fa-cog" aria-hidden="true" id="name"></i></button>
-                  <i class="fa fa-trash" id="name"></i>
+                  <button name="delBtn" type="button"><i class="fa fa-trash" id="name"></i></button>
                   <p style="color:#D35400;font-weight:bold;">Time: 5m</p>
                 </li>
                 </center>
               </ul>
             </a>
-          <% }; %>
+          
+            <a href="use" id="link">
+              <ul class="item" id="2">
+                <center>
+                <li >
+                  <img src="/images/template.png">
+                </li>
+                <li >
+                  <p style="font-weight:bold;" id="name">Caesar Salad</p>
+                  <button name="button" type="button" href="edit"><i class="fa fa-cog" aria-hidden="true" id="name"></i></button>
+                  <button name="delBtn" type="button"><i class="fa fa-trash" id="name"></i></button>
+                  <p style="color:#D35400;font-weight:bold;">Time: 5m</p>
+                </li>
+                </center>
+              </ul>
+            </a>
+          
+            <a href="use" id="link">
+              <ul class="item" id="3">
+                <center>
+                <li >
+                  <img src="/images/template.png">
+                </li>
+                <li >
+                  <p style="font-weight:bold;" id="name">Cereal</p>
+                  <button name="button" type="button" href="edit"><i class="fa fa-cog" aria-hidden="true" id="name"></i></button>
+                  <button name="delBtn" type="button"><i class="fa fa-trash" id="name"></i></button>
+                  <p style="color:#D35400;font-weight:bold;">Time: 5m</p>
+                </li>
+                </center>
+              </ul>
+            </a>
+          
+            <a href="use" id="link">
+              <ul class="item" id="4">
+                <center>
+                <li >
+                  <img src="/images/template.png">
+                </li>
+                <li >
+                  <p style="font-weight:bold;" id="name">Cheese Burger</p>
+                  <button name="button" type="button" href="edit"><i class="fa fa-cog" aria-hidden="true" id="name"></i></button>
+                  <button name="delBtn" type="button"><i class="fa fa-trash" id="name"></i></button>
+                  <p style="color:#D35400;font-weight:bold;">Time: 5m</p>
+                </li>
+                </center>
+              </ul>
+            </a>
+          
+            <a href="use" id="link">
+              <ul class="item" id="5">
+                <center>
+                <li >
+                  <img src="/images/template.png">
+                </li>
+                <li >
+                  <p style="font-weight:bold;" id="name">Spaghetti and Meatballs</p>
+                  <button name="button" type="button" href="edit"><i class="fa fa-cog" aria-hidden="true" id="name"></i></button>
+                  <button name="delBtn" type="button"><i class="fa fa-trash" id="name"></i></button>
+                  <p style="color:#D35400;font-weight:bold;">Time: 5m</p>
+                </li>
+                </center>
+              </ul>
+            </a>
+          
          <!----- 
           <li>
             <ul class="item" id="1">
