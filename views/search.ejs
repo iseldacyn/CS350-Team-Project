@@ -37,7 +37,7 @@
       </div>
       <div class="quick">
           <% for(var i = 0; i < recipes.length; i++) {%>
-            <a href="use" id="link">
+            <a href="use/<%= recipes[i].name %>" id="link">
               <ul class="item" id="<%= (i+1) %>">
                 <center>
                 <li >

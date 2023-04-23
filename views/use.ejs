@@ -17,28 +17,22 @@
     <header class="top-menu">
       <p style = "font-size:25px" "text-align:center;"><b>Recipe Buddy</b></p>
       <a id="home" type="button" name="button" href="/">HOME</a>
-      <a id="search" type="button" name="button" href="search">SEARCH</a>
-      <a id="add" type="button" name="button" href="create">ADD RECIPE</a>
-      <a id="contactus"type="button" name="button">CONTACT US</a>
-      <a id="login" name="button" href="login"><b>Login</b></a>
+      <a id="search" type="button" name="button" href="/search">SEARCH</a>
+      <a id="add" type="button" name="button" href="/create">ADD RECIPE</a>
+      <a id="contactus"type="button" name="/button">CONTACT US</a>
+      <a id="login" name="button" href="/login"><b>Login</b></a>
     </header>
 
     <div class="recipe-heading">
       <img src="../images/recipe-photo.jpg">
-      <h1>Homemade Bacon and Eggs</h1>
+      <h1><%= recipe.name %></h1>
       <h3>Description/Notes</h3>
-      <p>A simple, fast recipe for scrambled eggs with bacon.</p>
+      <p><%= recipe.desc %></p>
       <ul class="time-serve">
         <li><strong>Time:</strong> 6 mins</li>
         <li><strong>Servings:</strong> 2 people</li>
       </ul>
       <ul class="tags">
-        <li>Breakfast</li>
-        <li>Meat</li>
-        <li>Bacon</li>
-        <li>Eggs</li>
-        <li>Gluten-Free</li>
-        <li>Dairy-Free</li>
       </ul>
     </div>
 
@@ -46,27 +40,15 @@
       <div class="recipe-body">
         <h2>Ingredients</h2>
         <ul class="ing-list">
-          <li>Eggs (4)</li>
-          <li>Bacon (2 Pieces)</li>
-          <li>Milk (1 Cup)</li>
-          <li>Salt</li>
-          <li>Pepper</li>
-          <li>Butter</li>
-        </ul>
-
-        <hr style="border-width:0;border-top:dashed 5px;border-color:orange;margin-left:10%;margin-right:10%;">
-
-        <h2>Pantry</h2>
-        <ul class="ing-list">
-          <li>Skillet</li>
-          <li>Measuring Cup</li>
-          <li>Mixing Bowl</li>
+          <% ilist.forEach(function (ingred) {%>
+            <li><%= ingred %></li>
+          <% }); %>
         </ul>
 
         <hr style="border-width:0;border-top:dashed 5px;border-color:orange;margin-left:10%;margin-right:10%;">
 
         <h2>Directions</h2>
-        <p>[Insert Direction String Here]</p>
+        <p><%- recipe.instruct %></p>
       </div>
 
       <div class="timer-col">

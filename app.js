@@ -29,6 +29,36 @@ function pushRecipe(data, img = null) {
 }
 
 
+async function getRecipe(title) {
+
+    const db = getFirestore();
+    const recipeRef = db.collection('Recipes');
+
+    const snapshot = await recipeRef.where('Title', '==', title).get();
+    if (snapshot.empty) {
+        console.log("No matching documents.");
+        return;
+    }
+
+    recipes = [];
+
+    snapshot.forEach(doc => {
+        recipes.push(doc.data());
+    })
+
+    recipe = {
+        name: recipes[0].Title,
+        desc: recipes[0].Description,
+        rating: recipes[0].AvgRating,
+        ilist: recipes[0].IngredientList,
+        instruct: recipes[0].Instructions,
+        notes: recipes[0].Notes
+    };
+
+    return recipe;
+}
+
+
 // Returns an array containing every recipe within the database
 async function getRecipes() {
 
@@ -55,6 +85,8 @@ async function getRecipes() {
 
    return recipes 
 }
+
+
 
 // Create Express server to host application, and handle back
 // end functionality.
@@ -125,8 +157,20 @@ app.get("/contact", function (req, res) {
 app.get("/edit", function (req, res) {
     res.sendFile(__dirname + "/pages/edit.html");
 });
-app.get("/use", function (req, res) {
-    res.render("use");
+app.get("/use/:name", async function (req, res) {
+    var recipeName = String(req.params.name);
+    var recipe = await getRecipe(recipeName);
+    var newInstr = await parseInstr(recipe.instruct);
+    recipe.instruct = newInstr;
+    console.log(recipe);
+
+    var ilist = recipe.ilist;
+
+    
+    res.render("use", {
+        recipe: recipe,
+        ilist: ilist
+    });
 })
 
 // Start the server
@@ -134,6 +178,12 @@ app.listen(3000, function () {
     console.log("Server..... Is...\n ....Buzzinnn....");
 });
 
+function parseInstr(instr) {
+    res = instr.replaceAll(/\r\n/g,"<br>");
+    console.log(res);
+
+    return res;
+}
 
 // delete recipes to firestore db
 function deleteRecipe(data) {
