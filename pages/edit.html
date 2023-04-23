@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>RecipeBuddy | Create Recipe</title>
+        <link rel="stylesheet" href="/css/create.css">
+        <script src="/scripts/edit.js" async></script>
+    </head>
+    <body>
+        <div class="top-menu">
+            <p style = "font-size:25px" "text-align:center;"><b>Recipe Buddy</b></p>
+            <a id="home" type="button" name="button" href="/">HOME</a>
+            <a id="search" href="search" name="button">SEARCH</a>
+            <a id="add" type="button" name="button" href="create">ADD RECIPE</a>
+            <a id="contactus" type="button" name="button" href="contact">CONTACT US</a>
+            <a id="login" name="button" href="login"><b>Login</b></a>
+        </div>
+        <form class="recipe-form content-section" action="/" method="post">
+            <h1 class="title">Edit a Recipe</h1>
+            <div class="form-field">
+                <label class="label" for="name">Name of Recipe:</label>
+                <br>
+                <input class="field" type="text" id="name" name="name" value="">
+            </div>
+            <div class="form-field ingredients">
+                <label class="label" for="ingredients">List of Ingredients:</label>
+                <div class="ingredient-row">
+                    <span class="ingredient-header ingredient-quantity ingredient-column">Quantity</span>
+                    <span class="ingredient-header ingredient-unit ingredient-column">Unit</span>
+                    <span class="ingredient-header ingredient-name ingredient-column">Name</span>
+                </div>
+                <div class="ingredients-list">
+                    <div class="ingredient-row">
+                        <input class="ingredient-quantity ingredient-column field" type="number" name="quantity" id="quantity" required>
+                        <select class="ingredient-unit ingredient-column field" name="unit" id="unit" required>
+                            <option value="c">cup</option>
+                            <option value="floz">fl. oz</option>
+                            <option value="pt">pint</option>
+                            <option value="qt">quart</option>
+                            <option value="gal">gallon</option>
+                            <option value="oz">ounce</option>
+                            <option value="lb">lb</option>
+                            <option value="tsp">tsp</option>
+                            <option value="tbsp">tbsp</option>
+                            <option value="g">gram</option>
+                            <option value="kg">kilogram</option>
+                            <option value="ml">mililiter</option>
+                            <option value="l">liter</option>
+                        </select>
+                        <input class="ingredient-name ingredient-column field" type="text" name="iname" id="iname" required>
+                        <button class="btn add-btn ing-btn" type="button">&plus;</button>
+                    </div>
+                    <div class="ingredient-row">
+                        <input class="ingredient-quantity ingredient-column field" type="number" name="quantity" id="quantity" required>
+                        <select class="ingredient-unit ingredient-column field" name="unit" id="unit" required>
+                            <option value="c">cup</option>
+                            <option value="floz">fl. oz</option>
+                            <option value="pt">pint</option>
+                            <option value="qt">quart</option>
+                            <option value="gal">gallon</option>
+                            <option value="oz">ounce</option>
+                            <option value="lb">lb</option>
+                            <option value="tsp">tsp</option>
+                            <option value="tbsp">tbsp</option>
+                            <option value="g">gram</option>
+                            <option value="kg">kilogram</option>
+                            <option value="ml">mililiter</option>
+                            <option value="l">liter</option>
+                        </select>
+                        <input class="ingredient-name ingredient-column field" type="text" name="iname" id="iname" required>
+                        <button class="btn rmv-btn ing-btn" type="button">&minus;</button>
+                    </div>
+                </div>
+            </div>
+            <div class="form-field">
+                <label class="label" for="directions">Edit Directions</label>
+                <br>
+                <textarea class="field" name="directions" id="directions" cols="50" rows="10" required></textarea>
+            </div>
+            <div class="form-field">
+                <label class="label" for="description">Edit Description</label>
+                <br>
+                <textarea class="field" name="description" id="description" cols="50" rows="3"></textarea>
+            </div>
+            <div class="form-field">
+                <label class="label" for="photo">Picture of Food:</label>
+                <br>
+                <input class="field" type="file" name="photo" id="photo" accept="image/png, image/jpeg">
+            </div>
+            <div class="form-field">
+                <label class="label" for="note">Edit Notes:</label>
+                <br>
+                <textarea class="field" name="notes" id="note" cols="50" rows="3"></textarea>
+            </div>
+            <button class="btn" type="reset">Reset</button>
+            <button class="btn" type="submit">Save Recipe</button>
+        </form>
+        <div class="copyright">
+            <p>RECIPE BUDDY WEB MAGAZINE / LIFE STYLE SELECT MEAL WWW.RECIPE_BUDDY.COM</p>
+        </div>
+    </body>
+</html>
