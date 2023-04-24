@@ -154,8 +154,20 @@ app.get("/contact", function (req, res) {
     res.sendFile(__dirname + "/pages/contactus.html");
 });
 
-app.get("/edit", function (req, res) {
-    res.sendFile(__dirname + "/pages/edit.html");
+app.get("/edit", async function (req, res) {
+    var recipeName = String(req.params.name);
+    var recipe = await getRecipe(recipeName);
+    var newInstr = await parseInstr(recipe.instruct);
+    recipe.instruct = newInstr;
+    console.log(recipe);
+
+    var ilist = recipe.ilist;
+
+    
+    res.render("edit", {
+        recipe: recipe,
+        ilist: ilist
+    });
 });
 app.get("/use/:name", async function (req, res) {
     var recipeName = String(req.params.name);

@@ -20,7 +20,7 @@
             <div class="form-field">
                 <label class="label" for="name">Name of Recipe:</label>
                 <br>
-                <input class="field" type="text" id="name" name="name" value="">
+                <input class="field" type="text" id="name" name="name" value="<%= recipe.name %>">
             </div>
             <div class="form-field ingredients">
                 <label class="label" for="ingredients">List of Ingredients:</label>
@@ -75,12 +75,12 @@
             <div class="form-field">
                 <label class="label" for="directions">Edit Directions</label>
                 <br>
-                <textarea class="field" name="directions" id="directions" cols="50" rows="10" required></textarea>
+                <textarea class="field" name="directions" id="directions" cols="50" rows="10" value="<%= recipe.instruct %>" required></textarea>
             </div>
             <div class="form-field">
                 <label class="label" for="description">Edit Description</label>
                 <br>
-                <textarea class="field" name="description" id="description" cols="50" rows="3"></textarea>
+                <textarea class="field" name="description" id="description" cols="50" rows="3" value="<%= recipe.desc %>"></textarea>
             </div>
             <div class="form-field">
                 <label class="label" for="photo">Picture of Food:</label>
@@ -90,7 +90,7 @@
             <div class="form-field">
                 <label class="label" for="note">Edit Notes:</label>
                 <br>
-                <textarea class="field" name="notes" id="note" cols="50" rows="3"></textarea>
+                <textarea class="field" name="notes" id="note" cols="50" rows="3" value="<%= recipe.notes %>"></textarea>
             </div>
             <button class="btn" type="reset">Reset</button>
             <button class="btn" type="submit">Save Recipe</button>
