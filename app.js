@@ -159,8 +159,7 @@ app.get("/edit/:name", async function (req, res) {
     var recipe = await getRecipe(recipeName);
     console.log(recipe);
 
-    var ilist = recipe.ilist;
-
+    var ilist = parseIngred(recipe.ilist);
     
     res.render("edit", {
         recipe: recipe,
