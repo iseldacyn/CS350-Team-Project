@@ -174,9 +174,9 @@ app.get("/use/:name", async function (req, res) {
     var recipe = await getRecipe(recipeName);
     var newInstr = await parseInstr(recipe.instruct);
     recipe.instruct = newInstr;
-    console.log(recipe);
 
-    var ilist = recipe.ilist;
+    var ilist = parseIngred(recipe.ilist);
+    console.log(ilist);
 
     
     res.render("use", {
@@ -195,6 +195,23 @@ function parseInstr(instr) {
     console.log(res);
 
     return res;
+}
+
+function parseIngred(ilist) {
+    resList = []
+    for (let i = 0; i < ilist.length; i++) {
+        resArray = ilist[i].split(".")
+
+        ingred = {
+            unit: resArray[0],
+            quantity: resArray[1],
+            name: resArray[2]
+        }
+
+        resList.push(ingred)
+    }
+
+    return resList
 }
 
 // delete recipes to firestore db
