@@ -30,10 +30,11 @@
                     <span class="ingredient-header ingredient-name ingredient-column">Name</span>
                 </div>
                 <div class="ingredients-list">
+                    <% ilist.forEach(function (ingred) {%>
                     <div class="ingredient-row">
-                        <% for (var i = 0; i < ilist.length; i++) %>
-                        <input class="ingredient-quantity ingredient-column field" type="number" name="quantity" id="quantity" required>
+                        <input class="ingredient-quantity ingredient-column field" type="number" name="quantity" id="quantity" value="<%= ingred.quantity %>" required>
                         <select class="ingredient-unit ingredient-column field" name="unit" id="unit" required>
+                            <option value="<%= ingred.unit %>" selected></option>
                             <option value="c">cup</option>
                             <option value="floz">fl. oz</option>
                             <option value="pt">pint</option>
@@ -48,9 +49,10 @@
                             <option value="ml">mililiter</option>
                             <option value="l">liter</option>
                         </select>
-                        <input class="ingredient-name ingredient-column field" type="text" name="iname" id="iname" value="<%= ilist[i] %>" required>
+                        <input class="ingredient-name ingredient-column field" type="text" name="iname" id="iname" value="<%= ingred.name %>" required>
                         <button class="btn add-btn ing-btn" type="button">&plus;</button>
                     </div>
+                    <% }); %>
                 </div>
             </div>
             <div class="form-field">
