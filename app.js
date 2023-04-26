@@ -153,7 +153,11 @@ app.get("/login", function (req, res) {
 app.get("/contact", function (req, res) {
     res.sendFile(__dirname + "/pages/contactus.html");
 });
-
+app.get("/delete/:name", function (req, res) {
+    var recipeName = String(req.params.name);
+    deleteRecipe(recipeName);
+    res.redirect('/search');
+});
 app.get("/edit", async function (req, res) {
     var recipeName = String(req.params.name);
     var recipe = await getRecipe(recipeName);
