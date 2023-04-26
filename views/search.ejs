@@ -46,7 +46,7 @@
                 <li >
                   <p style="font-weight:bold;" id="name"><%= recipes[i].name %></p>
                   <a href="edit/<%= recipes[i].name %>"><i class="fa fa-cog" aria-hidden="true" id="name"></i>
-                  <a href="delete/<%= recipes[i].name %>"><i class="fa fa-trash" onclick="openPopup()" id="confirmPopup"></i>
+                    <a href="delete/<%= recipes[i].name %>"><i class="fa fa-trash" onclick="return confirm('Are you sure, you want to delete it?')" id="name"></i>
                   <p style="color:#D35400;font-weight:bold;">Time: 5m</p>
                 </li>
                 </center>
@@ -162,15 +162,7 @@
                 </li></center></ul>
               -->
     </div>
-    <script>
-      function openPopup() {
-        document.getElementById("confirmPopup").style.display = "block";
-      }
-  
-      function closePopup() {
-        document.getElementById("confirmPopup").style.display = "none";
-      }
-    </script>
+    
     
   </div>
   <footer class="search-copyright">
