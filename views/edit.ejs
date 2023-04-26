@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>RecipeBuddy | Create Recipe</title>
+        <title>RecipeBuddy | Edit Recipe</title>
         <link rel="stylesheet" href="/css/create.css">
         <script src="/scripts/edit.js" async></script>
     </head>
@@ -30,9 +30,11 @@
                     <span class="ingredient-header ingredient-name ingredient-column">Name</span>
                 </div>
                 <div class="ingredients-list">
+                    <% ilist.forEach(function (ingred) {%>
                     <div class="ingredient-row">
-                        <input class="ingredient-quantity ingredient-column field" type="number" name="quantity" id="quantity" required>
+                        <input class="ingredient-quantity ingredient-column field" type="number" name="quantity" id="quantity" value="<%= ingred.quantity %>" required>
                         <select class="ingredient-unit ingredient-column field" name="unit" id="unit" required>
+                            <option value="<%= ingred.unit %>" selected></option>
                             <option value="c">cup</option>
                             <option value="floz">fl. oz</option>
                             <option value="pt">pint</option>
@@ -47,40 +49,21 @@
                             <option value="ml">mililiter</option>
                             <option value="l">liter</option>
                         </select>
-                        <input class="ingredient-name ingredient-column field" type="text" name="iname" id="iname" required>
+                        <input class="ingredient-name ingredient-column field" type="text" name="iname" id="iname" value="<%= ingred.name %>" required>
                         <button class="btn add-btn ing-btn" type="button">&plus;</button>
                     </div>
-                    <div class="ingredient-row">
-                        <input class="ingredient-quantity ingredient-column field" type="number" name="quantity" id="quantity" required>
-                        <select class="ingredient-unit ingredient-column field" name="unit" id="unit" required>
-                            <option value="c">cup</option>
-                            <option value="floz">fl. oz</option>
-                            <option value="pt">pint</option>
-                            <option value="qt">quart</option>
-                            <option value="gal">gallon</option>
-                            <option value="oz">ounce</option>
-                            <option value="lb">lb</option>
-                            <option value="tsp">tsp</option>
-                            <option value="tbsp">tbsp</option>
-                            <option value="g">gram</option>
-                            <option value="kg">kilogram</option>
-                            <option value="ml">mililiter</option>
-                            <option value="l">liter</option>
-                        </select>
-                        <input class="ingredient-name ingredient-column field" type="text" name="iname" id="iname" required>
-                        <button class="btn rmv-btn ing-btn" type="button">&minus;</button>
-                    </div>
+                    <% }); %>
                 </div>
             </div>
             <div class="form-field">
                 <label class="label" for="directions">Edit Directions</label>
                 <br>
-                <textarea class="field" name="directions" id="directions" cols="50" rows="10" value="<%= recipe.instruct %>" required></textarea>
+                <textarea class="field" name="directions" id="directions" cols="50" rows="10" required><%= recipe.instruct %></textarea>
             </div>
             <div class="form-field">
                 <label class="label" for="description">Edit Description</label>
                 <br>
-                <textarea class="field" name="description" id="description" cols="50" rows="3" value="<%= recipe.desc %>"></textarea>
+                <textarea class="field" name="description" id="description" cols="50" rows="3" ><%= recipe.desc %></textarea>
             </div>
             <div class="form-field">
                 <label class="label" for="photo">Picture of Food:</label>
@@ -90,10 +73,10 @@
             <div class="form-field">
                 <label class="label" for="note">Edit Notes:</label>
                 <br>
-                <textarea class="field" name="notes" id="note" cols="50" rows="3" value="<%= recipe.notes %>"></textarea>
+                <textarea class="field" name="notes" id="note" cols="50" rows="3" ><%= recipe.notes %></textarea>
             </div>
             <button class="btn" type="reset">Reset</button>
-            <button class="btn" type="submit">Save Recipe</button>
+            <button class="btn" type="submit" href="edit/<%= recipe.name %>">Save Recipe</button>
         </form>
         <div class="copyright">
             <p>RECIPE BUDDY WEB MAGAZINE / LIFE STYLE SELECT MEAL WWW.RECIPE_BUDDY.COM</p>

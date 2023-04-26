@@ -132,6 +132,37 @@ app.post("/", (req, res) => {
     res.sendFile(__dirname + "/pages/index.html");
 });
 
+app.postEdit("/edit/:name", (req, res) => {
+    var oldRecipeName = String(req.params.name);
+    const recipe = req.body;
+    const data = {
+        Title: recipe.name,
+        RecipeTags: [],
+        Description: recipe.description,
+        AvgRating: null,
+        IngredientList: [],
+        Instructions: recipe.directions,
+        Notes: recipe.notes
+    };
+
+    // Obtaining lists from recipe
+    names = Array.from(recipe.iname);
+    quantities = Array.from(recipe.quantity);
+    units = Array.from(recipe.unit);
+
+    // Creates an easily parsible string to store in the database
+    for (let i = 0; i < names.length; i++) {
+        let str = units[i].concat(".", quantities[i].toString(), ".", names[i]);
+        data.IngredientList.push(str)
+    }
+
+    deleteRecipe(oldRecipeName);
+    // Stores recipe in db
+    pushRecipe(data);
+
+    res.redirect("/search");
+});
+
 app.get("/", function (req, res) {
     res.sendFile(__dirname + "/pages/index.html");
 });
@@ -153,20 +184,19 @@ app.get("/login", function (req, res) {
 app.get("/contact", function (req, res) {
     res.sendFile(__dirname + "/pages/contactus.html");
 });
+
 app.get("/delete/:name", function (req, res) {
     var recipeName = String(req.params.name);
     deleteRecipe(recipeName);
     res.redirect('/search');
 });
-app.get("/edit", async function (req, res) {
+
+app.get("/edit/:name", async function (req, res) {
     var recipeName = String(req.params.name);
     var recipe = await getRecipe(recipeName);
-    var newInstr = await parseInstr(recipe.instruct);
-    recipe.instruct = newInstr;
     console.log(recipe);
 
-    var ilist = recipe.ilist;
-
+    var ilist = parseIngred(recipe.ilist);
     
     res.render("edit", {
         recipe: recipe,
@@ -178,9 +208,9 @@ app.get("/use/:name", async function (req, res) {
     var recipe = await getRecipe(recipeName);
     var newInstr = await parseInstr(recipe.instruct);
     recipe.instruct = newInstr;
-    console.log(recipe);
 
-    var ilist = recipe.ilist;
+    var ilist = parseIngred(recipe.ilist);
+    console.log(ilist);
 
     
     res.render("use", {
@@ -199,6 +229,23 @@ function parseInstr(instr) {
     console.log(res);
 
     return res;
+}
+
+function parseIngred(ilist) {
+    resList = []
+    for (let i = 0; i < ilist.length; i++) {
+        resArray = ilist[i].split(".")
+
+        ingred = {
+            unit: resArray[0],
+            quantity: resArray[1],
+            name: resArray[2]
+        }
+
+        resList.push(ingred)
+    }
+
+    return resList
 }
 
 // delete recipes to firestore db
