@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>RecipeBuddy | Create Recipe</title>
+        <title>RecipeBuddy | Edit Recipe</title>
         <link rel="stylesheet" href="/css/create.css">
         <script src="/scripts/edit.js" async></script>
     </head>
@@ -76,7 +76,7 @@
                 <textarea class="field" name="notes" id="note" cols="50" rows="3" ><%= recipe.notes %></textarea>
             </div>
             <button class="btn" type="reset">Reset</button>
-            <button class="btn" type="submit">Save Recipe</button>
+            <button class="btn" type="submit" href="edit/<%= recipe.name %>">Save Recipe</button>
         </form>
         <div class="copyright">
             <p>RECIPE BUDDY WEB MAGAZINE / LIFE STYLE SELECT MEAL WWW.RECIPE_BUDDY.COM</p>

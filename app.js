@@ -132,6 +132,37 @@ app.post("/", (req, res) => {
     res.sendFile(__dirname + "/pages/index.html");
 });
 
+app.postEdit("/edit/:name", (req, res) => {
+    var oldRecipeName = String(req.params.name);
+    const recipe = req.body;
+    const data = {
+        Title: recipe.name,
+        RecipeTags: [],
+        Description: recipe.description,
+        AvgRating: null,
+        IngredientList: [],
+        Instructions: recipe.directions,
+        Notes: recipe.notes
+    };
+
+    // Obtaining lists from recipe
+    names = Array.from(recipe.iname);
+    quantities = Array.from(recipe.quantity);
+    units = Array.from(recipe.unit);
+
+    // Creates an easily parsible string to store in the database
+    for (let i = 0; i < names.length; i++) {
+        let str = units[i].concat(".", quantities[i].toString(), ".", names[i]);
+        data.IngredientList.push(str)
+    }
+
+    deleteRecipe(oldRecipeName);
+    // Stores recipe in db
+    pushRecipe(data);
+
+    res.redirect("/search");
+});
+
 app.get("/", function (req, res) {
     res.sendFile(__dirname + "/pages/index.html");
 });
