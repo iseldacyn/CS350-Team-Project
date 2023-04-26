@@ -132,7 +132,7 @@ app.post("/", (req, res) => {
     res.sendFile(__dirname + "/pages/index.html");
 });
 
-app.postEdit("/edit/:name", (req, res) => {
+app.post("/edit/:name", (req, res) => {
     var oldRecipeName = String(req.params.name);
     const recipe = req.body;
     const data = {
