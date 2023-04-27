@@ -132,8 +132,8 @@ app.post("/", (req, res) => {
     res.sendFile(__dirname + "/pages/index.html");
 });
 
-app.post("/edit/:name", (req, res) => {
-    var oldRecipeName = String(req.params.name);
+app.post("/search", async function (req, res) {
+    var oldRecipeName = req.body.oldRecipeName;
     console.log("Old Recipe Name: " + oldRecipeName);
     const recipe = req.body;
     const data = {
@@ -159,9 +159,11 @@ app.post("/edit/:name", (req, res) => {
 
     deleteRecipe(oldRecipeName);
     // Stores recipe in db
-    pushRecipe(data);
+    var result = await pushRecipe(data);
 
-    res.redirect("/search");
+    var recipes = await getRecipes();
+    console.log(recipes);
+    res.render("search", {recipes: recipes});
 });
 
 app.get("/", function (req, res) {

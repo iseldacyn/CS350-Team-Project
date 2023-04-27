@@ -15,7 +15,7 @@
             <a id="contactus" type="button" name="button" href="contact">CONTACT US</a>
             <a id="login" name="button" href="login"><b>Login</b></a>
         </div>
-        <form class="recipe-form content-section" action="/edit/:name" method="post">
+        <form class="recipe-form content-section" action="/search" method="post">
             <h1 class="title">Edit a Recipe</h1>
             <div class="form-field">
                 <label class="label" for="name">Name of Recipe:</label>
@@ -75,8 +75,9 @@
                 <br>
                 <textarea class="field" name="notes" id="note" cols="50" rows="3" ><%= recipe.notes %></textarea>
             </div>
+            <input type="hidden" id="oldRecipeName" name="oldRecipeName" value="<%= recipe.name %>"></input>
             <button class="btn" type="reset">Reset</button>
-            <button class="btn" type="submit" href="edit/<%= recipe.name %>">Save Recipe</button>
+            <button class="btn" type="submit" href="search">Save Recipe</button>
         </form>
         <div class="copyright">
             <p>RECIPE BUDDY WEB MAGAZINE / LIFE STYLE SELECT MEAL WWW.RECIPE_BUDDY.COM</p>
